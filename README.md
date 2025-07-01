@@ -70,3 +70,7 @@ public class LetraO {
         // Mostrar resultado
         System.out.println("Área total: " + total);
     }
+
+
+5.-D
+El Principio de Inversión de Dependencias (DIP) es el último de los principios SOLID y es crucial para construir sistemas flexibles y de bajo acoplamiento. Su idea central es invertir la dirección tradicional de las dependencias en el código.
