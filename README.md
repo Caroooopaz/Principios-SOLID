@@ -48,3 +48,58 @@ public class ServicioNotificacion {
 
 
 ✅ Ahora ServicioNotificacion no depende de una clase concreta, sino de una interfaz, permitiendo cambiar la implementación sin modificar la lógica.
+
+
+//FR S
+## *"El código debe estar abierto a extensión, pero cerrado a modificación.”*
+
+Este principio supone que las entidades de software deben estar abiertas para extensión pero cerradas para modificación.
+
+```java
+public class CalculadoraSalario {
+		public double calcularSalario(String tipoEmpleado, double salarioBase) {
+				if (tipoEmpleado.equals("TiempoCompleto")) {
+						return salarioBase;
+				} else if (tipoEmpleado.equals("PorHora")) {
+						return salarioBase * 1.5;
+				}
+						return 0;
+				}
+}
+```
+
+❌ Cada vez que agregamos un nuevo tipo de empleado, debemos **modificar la clase**, lo cual no es escalable.
+public interface CalculadoraSalario {
+    double calcularSalario();
+}
+
+public class SalarioTiempoCompleto implements CalculadoraSalario {
+
+    private double salarioBase;
+    
+    public SalarioTiempoCompleto(double salarioBase) { 
+		    this.salarioBase = salarioBase; 
+		}
+		
+    public double calcularSalario() { 
+		    return salarioBase; 
+		}
+}
+
+public class SalarioPorHora implements CalculadoraSalario {
+    private double tarifaHora;
+    private int horas;
+    
+    public SalarioPorHora(double tarifaHora, int horas) { 
+			  this.tarifaHora = tarifaHora; 
+			  this.horas = horas; 
+		}
+		
+    public double calcularSalario() { 
+		    return tarifaHora * horas;
+		}
+}
+
+​
+✅ Ahora podemos agregar nuevos tipos de salario sin modificar la clase existente.
+
