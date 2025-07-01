@@ -1,0 +1,3 @@
+1. S
+Principio de Responsabilidad Única (SRP - Single Responsibility Principle),
+Concepto: Una clase debería tener una y solo una razón para cambiar, lo que significa que debe tener una única responsabilidad. Explicación: El SRP busca que cada clase tenga una tarea bien definida y cohesiva. Imagina una clase como un empleado: si un empleado tiene demasiadas tareas (por ejemplo, contabilidad, ventas y recursos humanos), un cambio en una de esas áreas afectará su desempeño en las otras. Lo mismo ocurre con el software. Si una clase maneja múltiples responsabilidades, cualquier cambio en una de ellas podría requerir modificaciones en la misma clase, aumentando el riesgo de errores y dificultando el mantenimiento.
